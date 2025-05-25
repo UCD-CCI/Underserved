@@ -20,7 +20,7 @@ bash deploy.sh
 ```
 1. Follow on screen instructions and reboot server when instructed.  
 2. Re-connect to platform host server over SSH and run these commands.
-3. 
+3. Use **sudo** to run the script this time
 
 ```bash   
 tmux
@@ -262,7 +262,8 @@ This project was made possible thanks to the tools provided by the following org
 - [Portainer CE](https://www.portainer.io/)  
 - [MKDocs](https://www.mkdocs.org/)  
 - [Homepage by gethomepage.dev](https://gethomepage.dev/)  
-- [Decider by CISA](https://github.com/cisagov/decider)  
+- [Decider by CISA](https://github.com/cisagov/decider)
+- [Keycloak](https://www.keycloak.org/)
 
 
 
