@@ -1,0 +1,40 @@
+:root {
+  --md-primary-fg-color:        #243d8d;
+  --md-primary-fg-color--light: #AEb6BF;
+  --md-primary-fg-color--dark:  #90030C;
+}/* Reduce header height */
+.md-header {
+    height: 60px; /* Adjust this value as needed */
+}
+
+/* Keep the logo bigger while fitting within the reduced header */
+.md-header__button.md-logo img {
+    height: 50px; /* Adjust the logo size */
+    width: auto;
+}
+
+/* Ensure proper alignment of the title with the reduced header */
+.md-header__title {
+    line-height: 60px; /* Match the header height */
+}
+
+/* Reduce padding inside the header */
+.md-header__inner {
+    padding: 0 16px;
+    min-height: 60px; /* Matches header height */
+}
+
+.grid.cards {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.align-right {
+    float: right;
+    margin-left: 10px;
+    width: 150px;
+}

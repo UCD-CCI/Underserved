@@ -1,0 +1,34 @@
+diff --git a/docker/docker-compose.yml b/docker/docker-compose.yml
+index 821ab5f..2a42e5a 100644
+--- a/docker/docker-compose.yml
++++ b/docker/docker-compose.yml
+@@ -1,4 +1,3 @@
+-version: "3"
+ services:
+   database:
+     image: mariadb:10.6
+@@ -10,10 +9,12 @@ services:
+       MYSQL_DATABASE: "cerebrate"
+       MYSQL_USER: "cerebrate"
+       MYSQL_PASSWORD: "etarberec"
++    networks:
++        - docker_underserved
++
+   www:
+     image: ghcr.io/cerebrate-project/cerebrate:main
+-    ports:
+-      - "8080:80"
++    restart: unless-stopped
+     volumes:
+       - ./run/logs:/var/www/html/logs
+       - ./wait-for-it.sh:/usr/local/bin/wait-for-it.sh:ro
+@@ -27,3 +28,9 @@ services:
+       CEREBRATE_SECURITY_SALT: supersecret
+     depends_on:
+       - database
++    networks:
++        - docker_underserved
++networks:
++    docker_underserved:
++      external: true
++

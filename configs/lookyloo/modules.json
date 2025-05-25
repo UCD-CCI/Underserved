@@ -1,0 +1,107 @@
+{
+  "VirusTotal": {
+    "apikey": "null",
+    "trustenv": false,
+    "autosubmit": false,
+    "allow_auto_trigger": false,
+    "admin_only": false
+  },
+  "PhishingInitiative": {
+    "apikey": null,
+    "autosubmit": false,
+    "allow_auto_trigger": false,
+    "admin_only": true
+  },
+  "FOX": {
+    "apikey": null,
+    "autosubmit": false,
+    "allow_auto_trigger": false,
+    "admin_only": true
+  },
+  "Pandora": {
+    "url": "http://127.0.0.1:6100",
+    "autosubmit": false,
+    "allow_auto_trigger": false,
+    "admin_only": false
+  },
+  "SaneJS": {
+    "enabled": true,
+    "allow_auto_trigger": false,
+    "admin_only": false
+  },
+  "MultipleMISPs": {
+    "default": "MISP",
+    "instances": {
+      "MISP": {
+        "apikey": "misp-api-key",
+        "url": "https://misp.url",
+        "verify_tls_cert": false,
+        "timeout": 10,
+        "enable_lookup": true,
+        "enable_push": true,
+        "default_tags": [
+          "source:lookyloo"
+        ],
+        "auto_publish": false,
+        "allow_auto_trigger": false,
+        "admin_only": false
+      }
+    }
+  },
+  "UniversalWhois": {
+    "enabled": false,
+    "ipaddress": "127.0.0.1",
+    "port": 4243,
+    "allow_auto_trigger": false,
+    "admin_only": false
+  },
+  "UrlScan": {
+    "apikey":  "null",
+    "autosubmit": false,
+    "allow_auto_trigger": false,
+    "force_visibility": false,
+    "admin_only": false
+  },
+  "Phishtank": {
+    "enabled": true,
+    "url": "https://phishtankapi.circl.lu/",
+    "allow_auto_trigger": false,
+    "admin_only": false
+  },
+  "URLhaus": {
+    "enabled": true,
+    "url": "https://urlhaus-api.abuse.ch/v1/",
+    "allow_auto_trigger": false,
+    "admin_only": false
+  },
+  "Hashlookup": {
+    "enabled": true,
+    "url": "https://hashlookup.circl.lu/",
+    "allow_auto_trigger": true,
+    "admin_only": false
+  },
+  "CIRCLPDNS": {
+    "user": null,
+    "password": null,
+    "allow_auto_trigger": false,
+    "admin_only": false
+  },
+  "_notes": {
+    "apikey": "null disables the module. Pass a string otherwise.",
+    "autosubmit": "Automatically submits the URL to the 3rd party service.",
+    "admin_only": "Querying that module is only allowed to logged-in users (generally because the API keys have limits).",
+    "allow_auto_trigger": "Allow auto trigger per module: some (i.e. VT) can be very expensive",
+    "VirusTotal": "Module to query Virustotal: https://www.virustotal.com/",
+    "PhishingInitiative": "Module to query phishing initiative: https://phishing-initiative.fr/contrib/",
+    "SaneJS": "Module to query SaneJS: https://github.com/Lookyloo/sanejs",
+    "MultipleMISPs": "Module to query one or more MISP(s): https://www.misp-project.org/",
+    "UniversalWhois": "Module to query a local instance of uWhoisd: https://github.com/Lookyloo/uwhoisd",
+    "UrlScan": "Module to query urlscan.io",
+    "Phishtank": "Module to query Phishtank Lookup (https://github.com/Lookyloo/phishtank-lookup). URL set to none means querying the public instance.",
+    "URLhaus": "Module to query URL Haus.",
+    "Hashlookup": "Module to query Hashlookup (https://github.com/adulau/hashlookup-server). URL set to none means querying the public instance.",
+    "FOX": "Submission only interface by and for CCCS",
+    "Pandora": "Submission only interface for https://github.com/pandora-analysis/",
+    "CIRCLPDNS": "Module to query CIRCL Passive DNS (https://www.circl.lu/services/passive-dns/)"
+  }
+}

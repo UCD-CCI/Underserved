@@ -1,0 +1,171 @@
+{
+    "clientId": "cerebrate",
+    "name": "cerebrate",
+    "description": "cerebrate",
+    "rootUrl": "https://cerebrate.{{ _DOMAIN_ }}/",
+    "adminUrl": "https://cerebrate.{{ _DOMAIN_ }}/",
+    "baseUrl": "",
+    "surrogateAuthRequired": false,
+    "enabled": true,
+    "alwaysDisplayInConsole": false,
+    "clientAuthenticatorType": "client-secret",
+    "secret": "{{ _SECRET_ }}",
+    "redirectUris": [
+      "https://cerebrate.{{ _DOMAIN_ }}/*"
+    ],
+    "webOrigins": [
+      "https://cerebrate.{{ _DOMAIN_ }}"
+    ],
+    "notBefore": 0,
+    "bearerOnly": false,
+    "consentRequired": false,
+    "standardFlowEnabled": true,
+    "implicitFlowEnabled": false,
+    "directAccessGrantsEnabled": true,
+    "serviceAccountsEnabled": true,
+    "authorizationServicesEnabled": true,
+    "publicClient": false,
+    "frontchannelLogout": true,
+    "protocol": "openid-connect",
+    "attributes": {
+      "oidc.ciba.grant.enabled": "false",
+      "client.secret.creation.time": "{{ _TIMESTAMP_ }}",
+      "backchannel.logout.session.required": "true",
+      "display.on.consent.screen": "false",
+      "oauth2.device.authorization.grant.enabled": "false",
+      "backchannel.logout.revoke.offline.tokens": "false"
+    },
+    "authenticationFlowBindingOverrides": {},
+    "fullScopeAllowed": true,
+    "nodeReRegistrationTimeout": -1,
+    "protocolMappers": [
+      {
+        "name": "Client Host",
+        "protocol": "openid-connect",
+        "protocolMapper": "oidc-usersessionmodel-note-mapper",
+        "consentRequired": false,
+        "config": {
+          "user.session.note": "clientHost",
+          "id.token.claim": "true",
+          "access.token.claim": "true",
+          "claim.name": "clientHost",
+          "jsonType.label": "String"
+        }
+      },
+      {
+        "name": "org_uuid",
+        "protocol": "openid-connect",
+        "protocolMapper": "oidc-usermodel-attribute-mapper",
+        "consentRequired": false,
+        "config": {
+          "aggregate.attrs": "false",
+          "userinfo.token.claim": "true",
+          "multivalued": "false",
+          "user.attribute": "org_uuid",
+          "id.token.claim": "true",
+          "access.token.claim": "true",
+          "claim.name": "org_uuid"
+        }
+      },
+      {
+        "name": "org_name",
+        "protocol": "openid-connect",
+        "protocolMapper": "oidc-usermodel-attribute-mapper",
+        "consentRequired": false,
+        "config": {
+          "aggregate.attrs": "false",
+          "userinfo.token.claim": "true",
+          "multivalued": "false",
+          "user.attribute": "org_name",
+          "id.token.claim": "true",
+          "access.token.claim": "true",
+          "claim.name": "org_name"
+        }
+      },
+      {
+        "name": "",
+        "protocol": "openid-connect",
+        "protocolMapper": "oidc-usermodel-attribute-mapper",
+        "consentRequired": false,
+        "config": {
+          "id.token.claim": "true",
+          "access.token.claim": "true",
+          "userinfo.token.claim": "true"
+        }
+      },
+      {
+        "name": "Client IP Address",
+        "protocol": "openid-connect",
+        "protocolMapper": "oidc-usersessionmodel-note-mapper",
+        "consentRequired": false,
+        "config": {
+          "user.session.note": "clientAddress",
+          "id.token.claim": "true",
+          "access.token.claim": "true",
+          "claim.name": "clientAddress",
+          "jsonType.label": "String"
+        }
+      },
+      {
+        "name": "role_uuid",
+        "protocol": "openid-connect",
+        "protocolMapper": "oidc-usermodel-attribute-mapper",
+        "consentRequired": false,
+        "config": {
+          "aggregate.attrs": "false",
+          "userinfo.token.claim": "true",
+          "multivalued": "false",
+          "user.attribute": "role_uuid",
+          "id.token.claim": "true",
+          "access.token.claim": "true",
+          "claim.name": "role_uuid"
+        }
+      },
+      {
+        "name": "Client ID",
+        "protocol": "openid-connect",
+        "protocolMapper": "oidc-usersessionmodel-note-mapper",
+        "consentRequired": false,
+        "config": {
+          "user.session.note": "clientId",
+          "id.token.claim": "true",
+          "access.token.claim": "true",
+          "claim.name": "clientId",
+          "jsonType.label": "String"
+        }
+      },
+      {
+        "name": "role_name",
+        "protocol": "openid-connect",
+        "protocolMapper": "oidc-usermodel-attribute-mapper",
+        "consentRequired": false,
+        "config": {
+          "aggregate.attrs": "false",
+          "userinfo.token.claim": "true",
+          "multivalued": "false",
+          "user.attribute": "role_name",
+          "id.token.claim": "true",
+          "access.token.claim": "true",
+          "claim.name": "role_name"
+        }
+      }
+    ],
+    "defaultClientScopes": [
+      "web-origins",
+      "acr",
+      "profile",
+      "roles",
+      "email"
+    ],
+    "optionalClientScopes": [
+      "address",
+      "phone",
+      "offline_access",
+      "microprofile-jwt"
+    ],
+    "access": {
+      "view": true,
+      "configure": true,
+      "manage": true
+    }
+  }

@@ -1,0 +1,15 @@
+server {
+	listen       80  default_server;
+	server_name _;
+	return       404;
+}
+
+
+server {
+	listen 443 ssl default_server;
+	http2 on;
+	server_name _;
+	ssl_certificate /etc/nginx/ssl/nginx-selfsigned.crt;
+        ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key;
+	return       404;
+}

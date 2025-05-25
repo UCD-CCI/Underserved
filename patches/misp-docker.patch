@@ -1,0 +1,85 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+index 60bb2db..c45b35d 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -3,6 +3,7 @@ services:
+   # See: https://hub.docker.com/r/ixdotai/smtp
+   mail:
+     image: ixdotai/smtp
++    restart: unless-stopped
+     environment:
+       - "SMARTHOST_ADDRESS=${SMARTHOST_ADDRESS}"
+       - "SMARTHOST_PORT=${SMARTHOST_PORT}"
+@@ -10,8 +11,15 @@ services:
+       - "SMARTHOST_PASSWORD=${SMARTHOST_PASSWORD}"
+       - "SMARTHOST_ALIASES=${SMARTHOST_ALIASES}"
+ 
++    networks:
++        - docker_underserved
++
++
+   redis:
+     image: valkey/valkey:7.2
++    restart: unless-stopped
++    networks:
++        - docker_underserved
+     command: "--save '' --requirepass '${REDIS_PASSWORD:-redispassword}'"
+     healthcheck:
+       test: "valkey-cli -a '${REDIS_PASSWORD:-redispassword}' -p ${REDIS_PORT:-6379} ping | grep -q PONG || exit 1"
+@@ -50,9 +58,13 @@ services:
+       retries: 3
+       start_period: 30s
+       start_interval: 5s
++    networks:
++        - docker_underserved
++
+ 
+   misp-core:
+     image: ghcr.io/misp/misp-docker/misp-core:${CORE_RUNNING_TAG:-latest}
++    restart: unless-stopped
+     cap_add:
+       - AUDIT_WRITE
+     build:
+@@ -86,9 +98,7 @@ services:
+       retries: 3
+       start_period: 30s
+       start_interval: 30s
+-    ports:
+-      - "80:80"
+-      - "443:443"
++
+     volumes:
+       - "./configs/:/var/www/MISP/app/Config/"
+       - "./logs/:/var/www/MISP/app/tmp/logs/"
+@@ -246,14 +256,23 @@ services:
+       - "X_FRAME_OPTIONS=${X_FRAME_OPTIONS}"
+       - "CONTENT_SECURITY_POLICY=${CONTENT_SECURITY_POLICY}"
+ 
++    networks:
++        - docker_underserved
++
++
++
+   misp-modules:
+     image: ghcr.io/misp/misp-docker/misp-modules:${MODULES_RUNNING_TAG:-latest}
++    restart: unless-stopped
+     build:
+       context: modules/.
+       args:
+         - MODULES_TAG=${MODULES_TAG:?Missing .env file, see README.md for instructions}
+         - MODULES_COMMIT=${MODULES_COMMIT}
+         - MODULES_FLAVOR=${MODULES_FLAVOR:-full}
++    networks:
++        - docker_underserved
++
+     healthcheck:
+       test: "/bin/bash -c '</dev/tcp/localhost/6666'"
+       interval: 2s
+@@ -270,3 +289,7 @@ services:
+ 
+ volumes:
+     mysql_data:
++
++networks:
++   docker_underserved:
++     external: true

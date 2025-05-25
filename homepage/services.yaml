@@ -1,0 +1,98 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+
+- Reporting:
+    - MISP:
+        href: https://misp.underserved.org
+        description: A powerful open source threat intelligence platform that can be used to store, share and receive information about malware, threats, and vulnerabilities in a structured way.
+        icon: https://underserved.org/images/logo/misp-logo-s-u.png 
+        ping: misp-docker-misp-core-1
+
+    - MISP-Forms:
+        href: https://misp-forms.underserved.org
+        description: Provides a variety of web forms for reporting on numerous attack vectors. Automatically converts the data into structured MISP reports.
+        icon:  https://underserved.org/images/logo/mfs.png
+        ping: misp-forms-misp_forms-1
+
+- Reference:
+    - Cerebrate:
+        href: https://cerebrate.underserved.org
+        description: An open-source platform designed to act as a trusted contact information provider and interconnection orchestrator for other security tools. 
+        icon:  https://underserved.org/images/logo/cerebrate2.png
+        ping: docker-www-1
+
+    - Decider:
+        href: https://decider.underserved.org
+        icon:  https://underserved.org/images/logo/cisa-logo.svg
+        description: Assists network defenders and analysts in the process of mapping adversary behaviors to the MITRE ATT&CK® Framework.
+        ping: decider-web
+
+- Evidence Analysis:
+    - Pandora:
+        href: https://pandora.underserved.org
+        description: A service to discover if a file is suspicious and conveniently show the results with content preview interface for large documents, including a preview of the metadata. 
+        icon:  https://underserved.org/images/logo/pandora2.png
+        ping: pandora-pandora-1
+
+    - Lookyloo:
+        href: https://lookyloo.underserved.org
+        description: A web interface that captures a webpage in motion and displays a tree of the domains, that call each other. Ideal for view suspicious website.
+        icon:  https://underserved.org/images/logo/lookyloo2.jpeg
+        ping: lookyloo-lookyloo-1
+
+
+- Evidence Collection:
+
+    - Typo-squatting Finder:
+        href: https://typosquatting.underserved.org
+        description: A service for identifying potential typo-squatted domains, allowing for quick inspection and assessment of whether any fake domains are being used by an adversary.
+        icon:  https://underserved.org/images/logo/ts-medium.png
+        ping: ail-typo-website-web-1
+
+
+    - AIL:
+        href: https://ail.underserved.org
+        description: Analyse potential information leaks from unstructured data sources like pastes from Pastebin or other unstructured data streams. 
+        icon: https://underserved.org/images/logo/ail-project.png
+        ping: ail-framework
+
+
+- Documentation & Administration:
+
+     - User Guide:
+         href: https://mkdocs.underserved.org
+         icon: https://underserved.org/images/logo/user-guide.png
+
+     - Portainer:
+         #href: https://underserved.org
+         href: https://portainer.underserved.org
+         icon: https://underserved.org/images/logo/portainer.png
+
+     - Keycloak: 
+         href: https://keycloak.underserved.org
+         icon: https://underserved.org/images/logo/icon.svg 
+
+     - Co-Funded by the European Union:
+         href: https://underserved-project.eu
+         icon: https://underserved.org/images/logo/eu4.png
+
+
+- Threat Feed:
+    - Recent Events:
+        widget:
+          type: iframe
+          name: MISP
+          src: https://misp-forms.underserved.org/feed
+
+
+- News Feed:
+    - Recent News:
+        widget:
+          type: iframe
+          name: NEWS
+#          src: http://127.0.0.1:5000
+          src: https://misp-forms.underserved.org/news
+
+

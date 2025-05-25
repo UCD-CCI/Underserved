@@ -1,0 +1,111 @@
+site_name: Underserved User Guide
+docs_dir: docs
+
+
+theme:
+  name: material
+  logo: assets/blue_logo.png
+  favicon: assets/favicon.png
+
+
+
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - navigation.expand
+
+
+  palette:
+    - scheme: default
+      primary: navy
+      accent: light-blue
+    - scheme: slate
+      primary: Navy
+      accent: light-blue
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  homepage: https://underserved.org
+
+
+
+nav:
+  - Platforms Services:
+      - About Platform: index.md
+      - Reporting:
+        - MISP-Forms: misp-forms.md
+        - MISP Threat Sharing: MISP.md
+      - Reference:
+        - Decider: Decider.md
+        - Cerebrate (Admin): cerebrate.md
+      - Evidence Analysis:
+        - LookyLoo: LookyLoo.md
+        - Pandora: Pandora.md
+      - Evidence Collection:
+        - Typo-Squatting Finder: TypoSquat-Finder.md
+        - AIL(Admin): ail.md
+  - Common Cyber Attacks:
+      - Common Cyber Attack Types: common.md
+      - Phishing: phishing.md
+      - Smishing: smishing.md
+      - Cross-Site Scripting (XSS): xss.md
+      - Typo-Squatting: typo-squatting.md
+      - Malware: malware.md
+      - Disinformation: disinformation.md
+      - Social Enginnering: soc_eng.md
+      - Password Attack: password_attack.md
+      - Website Defacement: Website Defacement.md
+      - Denial of Service (DoS/DDoS): ddos.md
+      - Quishing: quishing.md
+      - Invoice Fraud: invoice_fraud.md
+      - SQL Injection: sql-injection.md
+      - Ransomware: ransomware.md
+      - Man-in-the-Middle (MITM): mitm.md
+      - Vishing: vishing.md
+
+
+  - Threat Intelligence:
+      - Cyber Threat Intelligence: threat_intelligence.md
+      - Threat Actors: ThreatActor.md
+      - MITRE ATT&CK Framework: MITRE ATT&CK Framework.md
+      - Tactics, Techniques & Procedures (TTPs): TTP.md
+      - Common Vulnerabilities and Exposures (CVE): cve.md
+      - Indicators of Compromise(IoC): ioc.md
+      - More Information: ti_more_info.md
+  - Additional Services:
+      - Additional Services: additional_services.md
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.extra
+  - pymdownx.tabbed
+  - pymdownx.snippets
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.mark
+  - footnotes
+  - attr_list
+  - md_in_html
+
+
+plugins:
+  - search
+  - tags
+  #- offline
+
+
+# Copyright
+copyright: 'Copyright &copy; 2025 - UnderServed Project. All Rights Reserved. '
+

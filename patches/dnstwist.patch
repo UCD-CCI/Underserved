@@ -1,0 +1,12 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+new file mode 100644
+index 0000000..a0f8a2a
+--- /dev/null
++++ b/docker-compose.yml
+@@ -0,0 +1,6 @@
++version: '3.8'
++services:
++  dnstwist:
++    build:
++      context: .
++      dockerfile: ./Dockerfile

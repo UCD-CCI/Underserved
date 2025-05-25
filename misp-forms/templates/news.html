@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Attack News Feed</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #001f3f; /* Navy */
+            color: white;
+        }
+        .card {
+            background-color: #003366; /* Darker navy for card background */
+            color: white;
+        }
+        .card a.btn {
+            background-color: #004080; /* Custom navy-ish button */
+            border: none;
+        }
+        .card a.btn:hover {
+            background-color: #0059b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-2 px-4">
+        {% for article in articles %}
+        <div class="card border-primary mb-5 w-95 rounded-0">
+            <h7 class="card-header bg-primary text-white">{{ article.title }}</h7>
+            <div class="card-body">
+                <p class="card-text small">
+                   {{ article.summary|safe }}<br>
+                   <strong>Source: {{ article.source }}</strong><small> - Published: {{ article.published }}</small><br>
+                </p>
+                <a href="{{ article.link }}" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+            </div>
+        </div>
+        {% else %}
+            <p>No articles found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

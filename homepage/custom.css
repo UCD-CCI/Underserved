@@ -1,0 +1,65 @@
+=#body {
+  zoom: 1.0; /* Adjust the number to scale up or down */
+  
+}
+.information-widget-logo,
+.information-widget-logo svg {
+    width: 60px;
+    height: 60px;
+    !important
+}
+
+.container {
+    max-width: 100% !important;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*==================================
+  SERVICE CARD STYLES
+==================================*/
+.service-card {
+    position: relative;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 0.375rem;
+    z-index: 1;
+    border: 1px solid #243d8d; /* Adds a light border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: border-image 0.3s ease;
+}
+
+.service-card:hover {
+  position: relative;
+  background: #234569; /* Solid blue */
+  border-radius: 15px; /* Rounded corners */
+  padding: 10px;
+  box-shadow: 0 1px 50px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+.service-card:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 15px; /* Same radius as the card */
+  padding: 2px; /* Width of the gradient border */
+  background: linear-gradient(90deg, #4A90E2, #1C3B70, #4A90E2); /* Same gradient */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none; /* Prevent blocking interaction with the card content */
+}
+
+.service-card:hover > * {
+  border-radius: 13px; /* Slightly smaller to fit inside the gradient border */
+}
+
+.service-icon img {
+    width: 55px !important; /* Set the desired width */
+    height: 55px !important; /* Set the desired height */
+}
+
+.service-card .service-description {
+    font-size: 15px; /* Adjust the font size to your preference */
+    line-height: 1.2; /* Adjust the line height to your preference */

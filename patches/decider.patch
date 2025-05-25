@@ -1,0 +1,106 @@
+diff --git a/docker-compose.yaml b/docker-compose.yaml
+index 4689e74..ce7b255 100644
+--- a/docker-compose.yaml
++++ b/docker-compose.yaml
+@@ -10,8 +10,6 @@ services:
+         build:
+             context: .
+             dockerfile: ./docker/web/Dockerfile
+-        ports:
+-            - '${WEB_IP}:${WEB_PORT}:5000'
+         environment:
+             # decider config
+             KIOSK_MODE: 'yes'
+@@ -56,7 +54,8 @@ services:
+             timeout: 2s
+             retries: 8
+         volumes:
+-            - db_data:/var/lib/postgresql/data
++            - underserved-decider_postgres_data:/var/lib/postgresql/data
+ 
+ volumes:
+-    db_data:
++    underserved-decider_postgres_data:
++      external: true
+diff --git a/docker/web/root_files/uwsgi-http-kiosk.ini b/docker/web/root_files/uwsgi-http-kiosk.ini
+index 1a34928..36dfc9f 100644
+--- a/docker/web/root_files/uwsgi-http-kiosk.ini
++++ b/docker/web/root_files/uwsgi-http-kiosk.ini
+@@ -24,36 +24,3 @@ enable-threads = true
+ threads = 4
+ offload-threads = 4
+ 
+-static-expires = .* %(24 * 60 * 60)
+-static-gzip-all = true
+-
+-# Apply conditional gzip encoding
+-collect-header = Content-Type RESPONSE_CONTENT_TYPE
+-collect-header = Content-Length RESPONSE_CONTENT_LENGTH
+-
+-# uWSGI internal are not that smart, thus no content-length means it's 0
+-response-route-if = empty:${RESPONSE_CONTENT_LENGTH} goto:no-length
+-
+-# Don't bother compressing 1kb responses, not worth the trouble
+-response-route-if = islower:${RESPONSE_CONTENT_LENGTH};1024 last:
+-response-route-label = no-length
+-
+-# Make sure the client actually wants gzip
+-response-route-if = contains:${HTTP_ACCEPT_ENCODING};gzip goto:check-response
+-response-route-run = last:
+-response-route-label = check-response
+-
+-# Don't bother compressing non-text stuff, usually not worth it
+-response-route-if = equal:${RESPONSE_CONTENT_TYPE};application/json goto:apply-gzip
+-response-route-if = startswith:${RESPONSE_CONTENT_TYPE};text/ goto:apply-gzip
+-response-route-run = last:
+-response-route-label = apply-gzip
+-response-route-run = gzip:
+-
+-# Why apply this filter too you wonder? The gzip transformation is not smart
+-# enough to chunk the body or set a Content-Length, thus keepalive will be broken
+-response-route-run = chunked:
+-
+-# references / credits:
+-# - https://blog.ionelmc.ro/2022/03/14/how-to-run-uwsgi/
+-# - https://ugu.readthedocs.io/en/latest/compress.html
+diff --git a/docker/web/root_files/uwsgi-https-kiosk.ini b/docker/web/root_files/uwsgi-https-kiosk.ini
+index de6820f..1bbcda5 100644
+--- a/docker/web/root_files/uwsgi-https-kiosk.ini
++++ b/docker/web/root_files/uwsgi-https-kiosk.ini
+@@ -24,36 +24,3 @@ enable-threads = true
+ threads = 4
+ offload-threads = 4
+ 
+-static-expires = .* %(24 * 60 * 60)
+-static-gzip-all = true
+-
+-# Apply conditional gzip encoding
+-collect-header = Content-Type RESPONSE_CONTENT_TYPE
+-collect-header = Content-Length RESPONSE_CONTENT_LENGTH
+-
+-# uWSGI internal are not that smart, thus no content-length means it's 0
+-response-route-if = empty:${RESPONSE_CONTENT_LENGTH} goto:no-length
+-
+-# Don't bother compressing 1kb responses, not worth the trouble
+-response-route-if = islower:${RESPONSE_CONTENT_LENGTH};1024 last:
+-response-route-label = no-length
+-
+-# Make sure the client actually wants gzip
+-response-route-if = contains:${HTTP_ACCEPT_ENCODING};gzip goto:check-response
+-response-route-run = last:
+-response-route-label = check-response
+-
+-# Don't bother compressing non-text stuff, usually not worth it
+-response-route-if = equal:${RESPONSE_CONTENT_TYPE};application/json goto:apply-gzip
+-response-route-if = startswith:${RESPONSE_CONTENT_TYPE};text/ goto:apply-gzip
+-response-route-run = last:
+-response-route-label = apply-gzip
+-response-route-run = gzip:
+-
+-# Why apply this filter too you wonder? The gzip transformation is not smart
+-# enough to chunk the body or set a Content-Length, thus keepalive will be broken
+-response-route-run = chunked:
+-
+-# references / credits:
+-# - https://blog.ionelmc.ro/2022/03/14/how-to-run-uwsgi/
+-# - https://ugu.readthedocs.io/en/latest/compress.html

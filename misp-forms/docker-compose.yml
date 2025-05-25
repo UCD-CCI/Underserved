@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    misp_forms:
+        build:
+          context: .
+        restart: always
+        networks:
+            - docker_underserved
+networks:
+  docker_underserved:
+    external: true

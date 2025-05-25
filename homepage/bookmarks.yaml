@@ -1,0 +1,22 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/bookmarks
+
+
+
+#
+#- Communications:
+#      - Underserved Mattermost:
+#          - abbr: MM
+#            href: https://chat.underserved.eu/
+#            icon: https://chat.underserved.eu/static/icon_76x76.png
+#            #description: Mattermost is an open-source, self-hostable online chat service with file sharing, search, and third party application integrations
+
+#      - Underserved Public Website:
+#          - abbr: US
+#            href: https://underserved.eu/
+#            #icon: https://misp-forms.underserver.cci.local/static/images/banner.png
+#            icon: /images/icon_disc.png
+
+
+

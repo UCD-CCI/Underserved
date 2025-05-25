@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ail-framework:
+    image: cciucd/ail-framework:latest #version 5
+    restart: unless-stopped
+    container_name: ail-framework
+    networks:
+      - docker_underserved
+networks:
+  docker_underserved:
+    external: true
+

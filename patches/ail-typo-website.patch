@@ -1,0 +1,172 @@
+diff --git a/Dockerfile b/Dockerfile
+new file mode 100644
+index 0000000..8931475
+--- /dev/null
++++ b/Dockerfile
+@@ -0,0 +1,23 @@
++# Use an official Python runtime as a parent image
++FROM python:3.9-slim
++
++# Set the working directory in the container
++WORKDIR /app
++
++# Copy the requirements file into the container
++COPY requirements.txt ./
++
++# Install any needed packages specified in requirements.txt
++RUN pip install --no-cache-dir -r requirements.txt
++
++# Copy the rest of the application code into the container
++COPY . .
++
++# Make port 5000 available to the world outside this container
++EXPOSE 5000
++
++# Define environment variable
++ENV FLASK_APP=Flask_server.py
++
++# Run the flask_api.py script first, then start the server
++CMD ["sh", "-c", "python Flask_api.py & flask run --host=0.0.0.0"]
+diff --git a/conf/conf.cfg b/conf/conf.cfg
+new file mode 100644
+index 0000000..c3d425c
+--- /dev/null
++++ b/conf/conf.cfg
+@@ -0,0 +1,32 @@
++[Flask_server]
++ip = ail-typo-website-web-1
++port = 7005
++
++[Flask_api]
++ip = ail-typo-website-web-1
++port = 7006
++url_to_server = https://typosquatting-finder.circl.lu
++
++[Thread]
++num_threads = 10
++
++[redis]
++host = ail-typo-website-redis-1
++port = 6379
++db = 0
++
++[redis_user]
++host = ail-typo-website-redis-1
++port = 6379
++db = 1
++
++[redis_warning_list]
++host = ail-typo-website-redis-1
++port = 6379
++db = 2
++
++[cache]
++expire = 86400
++
++[cache_session]
++expire = 3600
+diff --git a/docker-compose.yml b/docker-compose.yml
+new file mode 100644
+index 0000000..69504f2
+--- /dev/null
++++ b/docker-compose.yml
+@@ -0,0 +1,19 @@
++version: '3.8'
++
++services:
++  web:
++    build: .
++    restart: always
++    depends_on:
++      - redis
++    command: sh -c "python /app/Flask_api.py & python /app/Flask_server.py"
++
++  redis:
++    image: redis:7
++    restart: always
++
++    volumes:
++      - redis-data:/data
++
++volumes:
++  redis-data:
+diff --git a/templates/about.html b/templates/about.html
+index cebf21c..c1fe06e 100644
+--- a/templates/about.html
++++ b/templates/about.html
+@@ -17,9 +17,6 @@
+     </head>
+ 
+     <body>
+-        <div class="corner-ribbon top-right sticky white shadow">
+-            <a href="https://github.com/typosquatter/ail-typo-website" target="_blank">Project page</a>
+-        </div>
+ 
+         <div id="container">
+             <div id="top"></div>
+diff --git a/templates/base.html b/templates/base.html
+index abc261d..ebcde0a 100644
+--- a/templates/base.html
++++ b/templates/base.html
+@@ -17,10 +17,6 @@
+ 
+     <body>
+ 
+-        <div class="corner-ribbon top-right sticky white shadow">
+-            <a href="https://github.com/typosquatter/ail-typo-website" target="_blank">Project page</a>
+-        </div>
+-
+         <div id="container">
+             <div id="top"></div>
+ 
+@@ -28,9 +24,6 @@
+             {% block content %}
+             {% endblock %}
+ 
+-            <div class="corner-ribbon bottom-left sticky white shadow">
+-                <a href="about" target="_blank">About</a>
+-            </div>
+ 
+             <span id="goTop">[<a href="#top">Go Back Top</a>]</span>
+         </div>
+@@ -39,4 +32,4 @@
+         {% endblock %}
+         
+     </body>
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/templates/home_page.html b/templates/home_page.html
+index a0d32fd..4a06d96 100644
+--- a/templates/home_page.html
++++ b/templates/home_page.html
+@@ -6,7 +6,7 @@
+             <h1><img id="logo" src="{{ url_for('static',filename='image/ts-medium.png') }}"></h1>
+         </header>
+         <div id="intro"></div>
+-        <div v-if="!is_searching">Typosquatting finder is a free and public service to find typosquatted domains in order to quickly assess if there are any existing fake domains used by an adversary. You can enter a domain below to discover potentially typo-squatted domains. An advanced option allows to select the algorithms used.</div>
++        <div v-if="!is_searching">Typosquatting finder is a service to find typosquatted domains in order to quickly assess if there are any existing fake domains used by an adversary. You can enter a domain below to discover potentially typo-squatted domains. An advanced option allows to select the algorithms used.</div>
+         <div id="searchbox">
+             <input type="hidden" id="share" value="{{share}}">
+             <input type="text" id="url" placeholder="Enter a domain name to brute force Typosquatting" autofocus>
+@@ -716,4 +716,4 @@
+         }).mount('#container')
+ 
+     </script>
+-{% endblock %}
+\ No newline at end of file
++{% endblock %}
+diff --git a/templates/info.html b/templates/info.html
+index 201544a..97ada33 100644
+--- a/templates/info.html
++++ b/templates/info.html
+@@ -17,9 +17,6 @@
+     </head>
+ 
+     <body>
+-        <div class="corner-ribbon top-right sticky white shadow">
+-            <a href="https://github.com/typosquatter/ail-typo-website" target="_blank">Project page</a>
+-        </div>
+ 
+         <div id="container">
+             <div id="top"></div>

@@ -1,0 +1,71 @@
+---
+
+statusStyle: "dot"
+
+background:
+  image: /images/background44.jpg
+#  blur: xl # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+#  saturate: 10 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+#  brightness: 100 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+#  opacity: 90 # 0-100
+
+favicon: /images/favicon.png
+
+title: Cyber Threat Reporting Platform
+
+cardBlur: xl  # sm, "", md, etc... see https://tailwindcss.com/docs/backdrop-blur
+
+hideVersion: true
+
+theme: dark
+
+color: slate
+
+useEqualHeights: true
+disableCollapse: true
+
+
+
+layout:
+  Reporting:
+    style: column
+    columns: 2
+
+
+  Reference:
+    style: column
+    columns: 2
+
+  Evidence Analysis:
+    style: column
+    columns: 2
+
+  Evidence Collection:
+    style: column
+    columns: 2
+
+  Documentation & Administration:
+    style: row
+    columns: 4
+
+ # Documentation2 & Administration2:
+ #   style: row
+ #   columns: 3
+
+ # Threat Feed:
+ #   style: row
+ #   columns: 
+
+  Threat News:
+    style: row
+    columns: 2
+
+
+#  Documentation:
+#    style: column
+#    columns: 2
+
+#  Administration:
+#    style: column
+#    columns: 2
+

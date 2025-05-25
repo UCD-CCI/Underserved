@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mkdocs:
+    image: squidfunk/mkdocs-material
+    volumes:
+      - .:/docs
+    stdin_open: true  # Equivalent to `-it`
+    tty: true
+    restart: unless-stopped
+    networks:
+        - docker_underserved
+    ports:
+        - "8005:8000"
+networks:
+    docker_underserved:
+      external: true
+
+
+  

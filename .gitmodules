@@ -1,0 +1,18 @@
+[submodule "misp-docker"]
+	path = misp-docker
+	url = https://github.com/MISP/misp-docker.git
+[submodule "cerebrate"]
+	path = cerebrate
+	url = https://github.com/cerebrate-project/cerebrate.git
+[submodule "pandora"]
+	path = pandora
+	url = https://github.com/pandora-analysis/pandora.git
+[submodule "lookyloo"]
+	path = lookyloo
+	url = https://github.com/Lookyloo/lookyloo.git
+[submodule "decider"]
+	path = decider
+	url = https://github.com/cisagov/decider.git
+[submodule "ail-typo-website"]
+	path = ail-typo-website
+	url = https://github.com/typosquatter/ail-typo-website.git

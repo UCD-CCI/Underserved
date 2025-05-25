@@ -1,0 +1,7 @@
+meta:
+  name: Virus Total
+  description: Files analyzer
+
+settings:
+  apikey: ""
+# temp api key included for testing. Will be removed for final build.

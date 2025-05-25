@@ -1,0 +1,49 @@
+version: '3'
+services:
+    nginx_reverse:
+        build:
+            context: ./nginx
+        ports:
+            - 80:80
+            - 443:443
+        restart: always
+        volumes:
+            - ./nginx/logs:/var/log/nginx
+            - ./nginx/sites-enabled:/etc/nginx/sites-enabled
+            - ./nginx/ssl:/etc/nginx/ssl
+            - ./nginx/html:/usr/share/nginx/html
+        networks:
+            - docker_underserved
+            - decider_default
+            - ail-typo-website_default
+
+    homepage:
+        image: ghcr.io/gethomepage/homepage:latest
+        container_name: homepage
+        volumes:
+            - ./homepage:/app/config
+            - ./homepage/images:/app/public/images
+            - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods
+        environment:
+            HOMEPAGE_ALLOWED_HOSTS: underserved.org # required, may need port
+            #PUID: $PUID
+            #PGID: $PGID
+        restart: always
+        networks:
+            - docker_underserved
+            - decider_default
+            - ail-typo-website_default
+
+networks:
+    docker_underserved:
+        external: true
+    decider_default:
+        external: true
+    ail-typo-website_default:
+        external: true
+
+
+
+
+
+

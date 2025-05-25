@@ -1,0 +1,66 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+index a321313..328c951 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -3,19 +3,27 @@ services:
+ 
+   redis-cache:
+     image: valkey/valkey:latest
++    restart: unless-stopped
+     working_dir: /cache
+     command: ./cache.conf --daemonize no
+     volumes:
+         - ./cache:/cache
++    networks:
++        - docker_underserved
+ 
+   redis-indexing:
+     image: valkey/valkey:latest
++    restart: unless-stopped
+     working_dir: /indexing
+     command: ./indexing.conf --daemonize no
+     volumes:
+         - ./indexing:/indexing
++    networks:
++        - docker_underserved
++
+ 
+   lookyloo:
++    restart: unless-stopped
+     build: .
+     working_dir: /lookyloo
+     tty: true
+@@ -28,15 +36,28 @@ services:
+     volumes:
+         - ./cache:/lookyloo/cache
+         - ./indexing:/lookyloo/indexing
+-        - ./scraped:/lookyloo/scraped
+-        - ./archived_captures:/lookyloo/archived_captures
+-        - ./discarded:/lookyloo/discarded_captures
++        - underserved-lookyloo_scraped:/lookyloo/scraped
++        - underserved-lookyloo_archived_captures:/lookyloo/archived_captures
++        - underserved-lookyloo_discarded:/lookyloo/discarded_captures
+         - ./user_agents:/lookyloo/user_agents
+         - ./config:/lookyloo/config
+         - ./logs:/lookyloo/logs
+         - ./logs_web:/lookyloo/website/logs
+-    ports:
+-        - "5100:5100"
++
++
+     links:
+         - "redis-cache"
+         - "redis-indexing"
++    networks:
++        - docker_underserved
++volumes:
++  underserved-lookyloo_scraped:
++    external: true
++  underserved-lookyloo_archived_captures:
++    external: true
++  underserved-lookyloo_discarded:
++    external: true
++
++networks:
++    docker_underserved:
++      external: true

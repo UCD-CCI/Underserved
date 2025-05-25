@@ -1,0 +1,48 @@
+services:
+  keycloak_web:
+    image: quay.io/keycloak/keycloak:26.2.0
+    container_name: keycloak_web
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:8080:8080
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://keycloakdb:5432/keycloak
+      KC_DB_USERNAME: kc_admin
+      KC_DB_PASSWORD: kc_sapp
+
+      KC_HOSTNAME_URL: https://keycloak.underserved.org
+      KC_HOSTNAME_ADMIN_URL: https://keycloak.underserved.org
+      KC_PROXY_HEADERS: xforwarded
+
+
+      KC_LOG_LEVEL: info
+      KC_METRICS_ENABLED: true
+      KC_HEALTH_ENABLED: true
+      KEYCLOAK_ADMIN: kc_admin
+      KEYCLOAK_ADMIN_PASSWORD: kc_sapp
+    command: start-dev
+    depends_on:
+      - keycloakdb
+    networks:
+       - docker_underserved
+
+  keycloakdb:
+    image: postgres:15
+    restart: unless-stopped
+    volumes:
+      - underserved-keycloak_postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: kc_admin
+      POSTGRES_PASSWORD: kc_sapp
+    networks:
+       - docker_underserved
+
+volumes:
+  underserved-keycloak_postgres_data:
+    external: true
+
+networks:
+  docker_underserved:
+    external: true
