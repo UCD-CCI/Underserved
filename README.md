@@ -256,7 +256,8 @@ This project was made possible thanks to the tools provided by the following org
 	- [Lookyloo](https://www.lookyloo.eu/)
 	- [Pandora](https://github.com/pandora-analysis/pandora)
 	- [TypoSquatting-Finder](https://github.com/typosquatter/ail-typo-website)
-	- [Cerebrate](https://github.com/cerebrate-project/cerebrate)  
+	- [Cerebrate](https://github.com/cerebrate-project/cerebrate)
+  	- [AIL-Framework](https://www.ail-project.org/)
    
 - [Portainer CE](https://www.portainer.io/)  
 - [MKDocs](https://www.mkdocs.org/)  
