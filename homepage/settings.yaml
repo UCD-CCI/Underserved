@@ -48,24 +48,7 @@ layout:
     style: row
     columns: 4
 
- # Documentation2 & Administration2:
- #   style: row
- #   columns: 3
-
- # Threat Feed:
- #   style: row
- #   columns: 
-
   Threat News:
     style: row
     columns: 2
-
-
-#  Documentation:
-#    style: column
-#    columns: 2
-
-#  Administration:
-#    style: column
-#    columns: 2
 
