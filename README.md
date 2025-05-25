@@ -256,8 +256,9 @@ This project was made possible thanks to the tools provided by the following org
 	- [Lookyloo](https://www.lookyloo.eu/)
 	- [Pandora](https://github.com/pandora-analysis/pandora)
 	- [TypoSquatting-Finder](https://github.com/typosquatter/ail-typo-website)
-	- [Cerebrate](https://github.com/cerebrate-project/cerebrate)
-	- [Portainer CE](https://www.portainer.io/)  
+	- [Cerebrate](https://github.com/cerebrate-project/cerebrate)  
+   
+- [Portainer CE](https://www.portainer.io/)  
 - [MKDocs](https://www.mkdocs.org/)  
 - [Homepage by gethomepage.dev](https://gethomepage.dev/)  
 - [Decider by CISA](https://github.com/cisagov/decider)  
