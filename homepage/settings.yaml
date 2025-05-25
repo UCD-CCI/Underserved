@@ -4,10 +4,7 @@ statusStyle: "dot"
 
 background:
   image: /images/background44.jpg
-#  blur: xl # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
-#  saturate: 10 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
-#  brightness: 100 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
-#  opacity: 90 # 0-100
+
 
 favicon: /images/favicon.png
 
