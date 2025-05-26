@@ -14,7 +14,7 @@ To ensure stable performance and reliable operation, the UnderServed platform sh
 
 Operating System:
 
-- Recommended: Ubuntu Server 22.04 LTS
+- Recommended: Ubuntu Server 22.04 LTS (New Installation)
   UnderServed has been fully tested and validated on Ubuntu Server 22.04 LTS. This is the recommended host operating system for production deployments.
 
 Hardware:
