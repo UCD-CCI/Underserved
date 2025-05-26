@@ -15,7 +15,7 @@ These instructions assume you have already setup Gitlab Key and configured DNS
 Connect to platform host server over SSH and run these commands:
 ```bash
 git clone git@github.com:UCD-CCI/Underserved.git
-cd underserved
+cd Underserved
 bash deploy.sh
 ```
 1. Follow on screen instructions and reboot server when instructed.  
@@ -24,7 +24,7 @@ bash deploy.sh
 
 ```bash   
 tmux
-cd underserved
+cd Underserved
 sudo bash deploy.sh  
 ```
 
