@@ -30,9 +30,7 @@ Hardware:
 ---
 ## Deployment Quick Start 
 
-#### Requirement: Server running Ubuntu Server 22.04
-
-These instructions assume you have already setup Gitlab Key and configured DNS
+Ensure your server has an a domain name.  This will used to access the platform, e.g. https://underserved.myorg.  
 
 Connect to platform host server over SSH and run these commands:
 ```bash
