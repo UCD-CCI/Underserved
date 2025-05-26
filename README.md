@@ -32,27 +32,29 @@ Hardware:
 
 Ensure your server has an a domain name.  This will used to access the platform, e.g. https://underserved.myorg.  
 
-Connect to platform host server over SSH and run these commands:
+1. Connect to platform host server over SSH and run these commands:
 ```bash
 git clone https://github.com/UCD-CCI/Underserved.git
 cd Underserved
 bash deploy.sh
 ```
-1. Follow on screen instructions and reboot server when instructed.  
-2. Re-connect to platform host server over SSH and run these commands.
-3. Start **tmux** session (optional)
+2. Follow on screen instructions and reboot server when instructed.  
+3. Re-connect to platform host server over SSH.
+4. Start **tmux** session (optional)
 ```bash
 tmux
 ```  
-4. Use **sudo** to run the script this time
+5. Use **sudo** to run the script this time
 
 ```bash   
 cd Underserved
 sudo bash deploy.sh  
 ```
 
-5. Follow on screen instructions and reboot server when instructed.  
-6. Take note of login credentials before reboot ⚠️
+6. Follow on screen instructions and reboot server when instructed.  
+7. Take note of login credentials before reboot ⚠️
+8. Connect to server on domainname, e.g. https://ttps://underserved.myorg.
+9. It is safe to bypass seurity warnings on brwwser.  This issue will be resolved whne SSL certs are install. 
 
 ---
 
