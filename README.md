@@ -6,6 +6,27 @@ install and easy to use, enabling them to report cyber threat incidents to law e
 More Information on Project: https://underserved-project.eu/
 
 ---
+
+## **Requirements**
+
+
+To ensure stable performance and reliable operation, the UnderServed platform should be deployed on hardware and software that meets the following minimum specifications:  
+
+Operating System:
+
+- Recommended: Ubuntu Server 22.04 LTS
+  UnderServed has been fully tested and validated on Ubuntu Server 22.04 LTS. This is the recommended host operating system for production deployments.
+
+Hardware:
+
+- CPU: 4-core (minimum)
+- Memory: 32 GB (minimum), 64 GB (recommended)
+- Disk Space: Minimum 500 GB SSD
+  (Actual storage requirements depend on the expected volume of incident reports, logs, and retained analysis data.)
+
+⚠️ The Underserved platform includes multiple services for threat reporting, enrichment, and analysis, so adequate compute and storage resources are essential. Attempting to deploy the platform on low-specification hardware (virtual or physical) is strongly discouraged, as it will likely result in failed deployment, degraded performance, or incomplete functionality.
+
+---
 ## Deployment Quick Start 
 
 #### Requirement: Server running Ubuntu Server 22.04
