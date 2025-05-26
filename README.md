@@ -121,14 +121,15 @@ bash deploy.sh
 
 ### After Reboot
 Reconnect to the server:
-
-Then re-run these commands: (⚠️ This time run use **sudo** to run command. This will also script to run without repeated requests to enter password)
+Start a tmux session - Using tmux will protect your deployment process from crashing if connection to the server is lost
 ```bash
 tmux
+```
+Re-run these commands - Note, using to sudo this time.  This will ensure you are not asked to submit password multiple times during the install. 
+```
 cd underserved
 sudo bash deploy.sh
 ```
-Using tmux will protect your deployment process from crashing if connection to the server is lost.
 
 ### Script Prompts & Configuration
 
