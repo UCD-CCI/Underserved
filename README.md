@@ -21,6 +21,9 @@ bash deploy.sh
 1. Follow on screen instructions and reboot server when instructed.  
 2. Re-connect to platform host server over SSH and run these commands.
 3. Start **tmux** session (optional)
+```bash
+tmux
+```  
 4. Use **sudo** to run the script this time
 
 ```bash   
@@ -28,8 +31,8 @@ cd Underserved
 sudo bash deploy.sh  
 ```
 
-4. Follow on screen instructions and reboot server when instructed.  
-5. Take note of login credentials before reboot ⚠️
+5. Follow on screen instructions and reboot server when instructed.  
+6. Take note of login credentials before reboot ⚠️
 
 ---
 
