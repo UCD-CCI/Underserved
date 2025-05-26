@@ -14,7 +14,7 @@ These instructions assume you have already setup Gitlab Key and configured DNS
 
 Connect to platform host server over SSH and run these commands:
 ```bash
-git clone ssh://git@ccilab.ucd.ie:2332/underserved/underserved-nginx.git
+git clone ssh://git@github.com:UCD-CCI/Underserved.git
 cd underserved
 bash deploy.sh
 ```
