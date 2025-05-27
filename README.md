@@ -4,6 +4,13 @@ The UnderServed project aims to provide NGOs with a free, self-hosted cyber thre
 
 More Information on Project: https://underserved-project.eu/
 
+### Platform Overview
+
+
+
+<img src="homepage/images/overview.png" alt="UN Icon" width="850" style="float: center; margin-left: 10px;"><br>
+
+
 ---
 
 ## **Requirements**
