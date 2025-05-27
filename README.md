@@ -84,11 +84,11 @@ sudo bash deploy.sh
 
 ## DNS Configuration
 
-To make the platform accessible, configure your organisation’s DNS records. Ideally, the Fully Qualified Domain Name (FQDN) should combine the platform name and your organisation’s domain.
+To make the platform accessible, configure your organisation’s DNS records as follows.
 
 ### Wildcard Subdomain (Recommended)
 
-A wildcard DNS record allows all subdomains to automatically resolve to the server's IP address. This simplifies managing multiple Underserved platform services.
+A wildcard DNS record allows all subdomains to automatically resolve to the server's IP address.
 
 **DNS Record Example:**
 ```
@@ -100,7 +100,7 @@ underserved.myngo.com            A     <server_ip>
 
 ### CNAME Records (Alternative)
 
-If your organisation does not permit wildcard DNS entries, manually configured CNAME records for each service will suffice.
+If your organisation does not permit wildcard DNS entries, manually configure CNAME records for each service.
 
 **DNS Record Example:**
 ```
