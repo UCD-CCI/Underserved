@@ -207,7 +207,7 @@ Let's Encrypt is a free, automated, and open Certificate Authority (CA) provided
 1. Connect to the platform host via SSH
 2. Run the following commands.
 ```bash
-cd underserved
+cd Underserved
 bash lets_encrypt_ssl_generate.sh
 ```
 The script will prompt for certificate details.
@@ -268,7 +268,7 @@ To support admin basic functions. like password resets, a utility script is prov
 To run, ssh into the platform servers and
 
 ```bash
-cd underserved
+cd Underserved
 bash utils.sh
 ```
 Utils Menu
