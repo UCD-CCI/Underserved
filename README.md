@@ -51,12 +51,12 @@ sudo bash deploy.sh
 ```
 
 6. Follow on screen instructions and provide these details when requested.  
- 	- Domain name,  e.g. underserved.myorg
- 	- Organistion Name: myorg
- 	- Email Address: j.smith@myorg.com	   
+ 	- Domain name:  e.g. underserved.myorg
+ 	- Organistion Name: e.g. myorg
+ 	- Email Address: e.g. j.smith@myorg.com	   
 7. Take note of login credentials before reboot ⚠️
-8. Connect to server on domainname, e.g. https://ttps://underserved.myorg.
-9. It is safe to bypass seurity warnings on brwwser.  This issue will be resolved whne SSL certs are install. 
+8. After reboot, connect to server on domainname, e.g. https://underserved.myorg
+	- It is safe to bypass seurity warnings on browser.  This issue will be resolved when valid SSL certs are installed. 
 
 ---
 
