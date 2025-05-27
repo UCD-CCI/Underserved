@@ -13,8 +13,8 @@ To ensure stable performance and reliable operation, the UnderServed platform sh
 
 Operating System:
 
-- Recommended: Ubuntu Server 22.04 LTS (New Installation)  
-  UnderServed has been fully tested and validated on Ubuntu Server 22.04 LTS. This is the recommended host operating system for production deployments.
+- Ubuntu Server 22.04 LTS (New Installation)  
+  The UnderServed Platform has been fully tested and validated on Ubuntu Server 22.04 LTS. This is the recommended host operating system for production deployments.
 
 Hardware:
 
@@ -24,7 +24,7 @@ Hardware:
   (Actual storage requirements depend on the expected volume of incident reports, logs, and retained analysis data.)
   
 
-> ⚠️ The Underserved platform includes multiple services for threat reporting, enrichment, and analysis, so adequate compute and storage resources are essential. Attempting to deploy the platform on low-specification hardware (virtual or physical) is strongly discouraged, as it will likely result in failed deployment, degraded performance, or incomplete functionality.
+**⚠️ The Underserved platform includes multiple services for threat reporting, enrichment, and analysis, so adequate compute and storage resources are essential. Attempting to deploy the platform on low-specification hardware (virtual or physical) is strongly discouraged, as it will likely result in failed deployment, degraded performance, or incomplete functionality.**
 
 ---
 ## Deployment Quick Start 
@@ -39,7 +39,7 @@ bash deploy.sh
 ```
 2. Follow on screen instructions and reboot server when instructed.  
 3. Re-connect to platform host server over SSH.
-4. Start **tmux** session (optional)
+4. Start **tmux** session (optional, but doing so with prevent the installation script from crashing should you lose your SSH connection to the server during the installation.)
 ```bash
 tmux
 ```  
