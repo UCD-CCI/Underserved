@@ -204,22 +204,20 @@ During deployment private SSL certs are generated.  These can be replaced by cer
 Let's Encrypt is a free, automated, and open Certificate Authority (CA) provided by the Internet Security Research Group (ISRG). The platform includes a script to automate the generation of SSL certificates.
 
 ### Running the Script
-1. Connect to the platform host via SSH (see Section 3.1).
-2. Run the following commands:
+1. Connect to the platform host via SSH
+2. Run the following commands.
 ```bash
-tmux
 cd underserved
 bash lets_encrypt_ssl_generate.sh
 ```
-
 The script will prompt for certificate details.
+
+---
 
 ## Sync with Remote MISP Server
 
 This guide explains how to synchronise events between two MISP instances. You can either pull data from a remote MISP server or push data to it. 
 Syncing allows threat intelligence sharing across organisations. This is a guide for syncing MISP server A with MISP Server B
-
----
 
 ### MISP Server A
 Login to **MISP Server A** with admin account
