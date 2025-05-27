@@ -133,7 +133,7 @@ Clone the Underserved Repository
 
 ```bash
 git clone https://github.com/UCD-CCI/Underserved.git
-cd underserved
+cd Underserved
 bash deploy.sh
 ````
 
@@ -151,7 +151,7 @@ tmux
 ```
 Re-run these commands - Note, using to sudo this time.  This will ensure you are not asked to submit password multiple times during the install. 
 ```
-cd underserved
+cd Underserved
 sudo bash deploy.sh
 ```
 
