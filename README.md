@@ -50,7 +50,10 @@ cd Underserved
 sudo bash deploy.sh  
 ```
 
-6. Follow on screen instructions and reboot server when instructed.  
+6. Follow on screen instructions and provide these details when requested.  
+ 	- Domain name,  e.g. underserved.myorg
+ 	- Organistion Name: myorg
+ 	- Email Address: j.smith@myorg.com	   
 7. Take note of login credentials before reboot ⚠️
 8. Connect to server on domainname, e.g. https://ttps://underserved.myorg.
 9. It is safe to bypass seurity warnings on brwwser.  This issue will be resolved whne SSL certs are install. 
