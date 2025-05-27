@@ -7,8 +7,18 @@ More Information on Project: https://underserved-project.eu/
 ### Platform Overview
 
 The platform integrates a suite of threat intelligence tools developed by CIRCL (Computer Incident Response Center Luxembourg) to support effective and accessible cyber threat reporting.
-At its core is MISP (Malware Information Sharing Platform), a powerful threat intelligence platform designed for sharing, storing, and correlating Indicators of Compromise (IoCs), financial fraud data, vulnerability information, and more. MISP is widely used across organizations to store and exchange cybersecurity data, enabling users to detect and prevent threats targeting ICT infrastructure, organizations, and individuals.
+At its core is MISP (Malware Information Sharing Platform), a powerful threat intelligence platform designed for sharing, storing, and correlating Indicators of Compromise (IoCs), financial fraud data, vulnerability information, and more. MISP is widely used across organisations to store and exchange cybersecurity data, enabling users to detect and prevent threats targeting ICT infrastructure, organisations, and individuals.
 While MISP is a powerful tool, contributing meaningful and structured data to it can be complex. It typically requires experience and training to use effectively. The UnderServed platform simplifies this process by surrounding MISP with a set of integrated detection and analysis services, allowing users to submit reports in a user-friendly and structured way. Additional tools are also included to support both users and administrators of the platform.
+
+- MISP-Forms: Provides a variety of user-friendly web forms for reporting various types of cyber incidents. Automatically converts submissions into structured MISP reports.
+- Lookyloo (CIRCL): A web interface that captures a webpage and displays a tree of all domain calls made during the visit. It is particularly useful for analysing suspicious websites.
+- Pandora (CIRCL): A service for assessing whether files are suspicious. Offers a preview of large documents and their metadata.
+- Typo-Squatting Finder (CIRCL): Identifies potential typo-squatted domains, helping users detect malicious impersonation or phishing attempts.
+- AIL Framework (CIRCL): Designed to analyse unstructured data sources, such as paste sites, for potential data leaks and threat indicators.
+- Keycloak: An open-source Identity and Access Management (IAM) solution for authentication and authorisation of users and services.
+- Portainer: A container management tool that simplifies administration, monitoring, and troubleshooting of the Docker environment.
+
+
 
 <img src="homepage/images/overview.png" alt="UN Icon" width="850" style="float: center; margin-left: 10px;"><br>
 
