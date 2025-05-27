@@ -39,7 +39,7 @@ bash deploy.sh
 ```
 2. Follow on screen instructions and reboot server when instructed.  
 3. Re-connect to platform host server over SSH.
-4. Start **tmux** session (optional, but doing so with prevent the installation script from crashing should you lose your SSH connection to the server during the installation.)
+4. Start **tmux** session (optional, but doing so with prevent the script from crashing should you lose your SSH connection to the server during the installation.)
 ```bash
 tmux
 ```  
