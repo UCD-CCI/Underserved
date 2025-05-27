@@ -138,18 +138,18 @@ bash deploy.sh
 ````
 
 1. Follow on Screen instructions
-2. Docker Dependency check will fail - This is expected behaviour on a first deployment.
-3. The script will prompt you for your password and install docker. 
+	- Docker Dependency check will fail - This is expected behaviour on a first deployment.
+	- The script will prompt you for your password and install docker. 
 4. After docker installation completes you will be asked to **reboot**,  again password is required.
 
 
 ### After Reboot
-Reconnect to the server:
-Start a tmux session - Using tmux will protect your deployment process from crashing if connection to the server is lost
+1. Reconnect to the server:  
+2. Start a tmux session - Using tmux will protect your deployment process from crashing if connection to the server is lost
 ```bash
 tmux
 ```
-Re-run these commands - Note, using to sudo this time.  This will ensure you are not asked to submit password multiple times during the install. 
+3. Re-run these commands - Note, using to sudo this time.  This will ensure you are not asked to submit password multiple times during the install. 
 ```
 cd Underserved
 sudo bash deploy.sh
@@ -158,7 +158,7 @@ sudo bash deploy.sh
 ### Script Prompts & Configuration
 
 **Python dependencies**
-- You will be prompted for you password to install additonal python dependencies
+- Script will install additonal python dependencies
 
 **Overcommit Memory:**
 - Choose `y` to enable on the virtual server
@@ -167,13 +167,12 @@ sudo bash deploy.sh
 - Enter your platform FQDN (e.g., `underserved.myngo.com`)
 
 **Organisation Details:**
-- Use a short name without spaces
+- Enter Name without spaces
 - Provide a valid administrative email address
 
 **SSL Certificates:**
 - Initially, private SSL certificates are used
 - You may receive browser warnings (this is expected)
-- See Section 2 for setting up valid SSL certificates
 
 The script will now:
 - Clone required repositories
@@ -181,7 +180,7 @@ The script will now:
 - Start containers
 - Configure service integration
 
-This may take 25–50 minutes and runs unattended.
+This may take approx. 25–35 minutes and runs unattended.
 
 ---
 
@@ -193,7 +192,7 @@ You will be prompted to reboot:
 - Type `Y`
 - Enter the server password
 
-After reboot, access the platform at the provided URL.
+After reboot, access the platform at the provided URL, e.g. https://underserved.myorg
 
 **Note:** Because private SSL certificates are used during initial deployment, your browser may display a warning. It is safe to proceed.
 
