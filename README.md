@@ -57,7 +57,7 @@ git clone https://github.com/UCD-CCI/Underserved.git
 cd Underserved
 bash deploy.sh
 ```
-2. Follow on screen instructions and reboot server when instructed.  
+2. Follow on screen instructions and reboot server when instructed. 
 3. Re-connect to platform host server over SSH.
 4. Start **tmux** session (optional, but doing so with prevent the script from crashing should you lose your SSH connection to the server during the installation.)
 ```bash
@@ -70,7 +70,7 @@ cd Underserved
 sudo bash deploy.sh  
 ```
 
-6. Follow on screen instructions and provide these details when requested.  
+6. Follow on screen instructions and provide these details when requested.  (Deployment time approx. 25–35 minutes).
  	- Domain name:  e.g. underserved.myorg
  	- Organistion Name: e.g. myorg
  	- Email Address: e.g. j.smith@myorg.com	   
