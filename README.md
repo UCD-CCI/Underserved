@@ -44,7 +44,7 @@ Hardware:
   (Actual storage requirements depend on the expected volume of incident reports, logs, and retained analysis data.)
   
 
-**⚠️ The Underserved platform includes multiple services for threat reporting, enrichment, and analysis, so adequate compute and storage resources are essential. Attempting to deploy the platform on low-specification hardware (virtual or physical) is strongly discouraged, as it will likely result in failed deployment, degraded performance, or incomplete functionality.**
+**⚠️ The Underserved platform includes multiple services for threat reporting, enrichment, and analysis, so adequate compute resources are essential. Attempting to deploy the platform on low-specification hardware (virtual or physical) is discouraged, as it will likely result in failed deployment, degraded performance, or incomplete functionality.**
 
 ---
 ## Deployment Quick Start 
