@@ -6,7 +6,9 @@ More Information on Project: https://underserved-project.eu/
 
 ### Platform Overview
 
-
+The platform integrates a suite of threat intelligence tools developed by CIRCL (Computer Incident Response Center Luxembourg) to support effective and accessible cyber threat reporting.
+At its core is MISP (Malware Information Sharing Platform), a powerful threat intelligence platform designed for sharing, storing, and correlating Indicators of Compromise (IoCs), financial fraud data, vulnerability information, and more. MISP is widely used across organizations to store and exchange cybersecurity data, enabling users to detect and prevent threats targeting ICT infrastructure, organizations, and individuals.
+While MISP is a powerful tool, contributing meaningful and structured data to it can be complex. It typically requires experience and training to use effectively. The UnderServed platform simplifies this process by surrounding MISP with a set of integrated detection and analysis services, allowing users to submit reports in a user-friendly and structured way. Additional tools are also included to support both users and administrators of the platform.
 
 <img src="homepage/images/overview.png" alt="UN Icon" width="850" style="float: center; margin-left: 10px;"><br>
 
