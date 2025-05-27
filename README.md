@@ -1,7 +1,6 @@
 <img src="homepage/images/icon_disc.png" alt="UN Icon" width="250" style="float: right; margin-left: 10px;"><br>
-  
-The UnderServed project aims to offer NGOs a free self-hosted, cyber threat reporting platform that is simple to 
-install and easy to use, enabling them to report cyber threat incidents to law enforcement effectively. 
+
+The UnderServed project aims to provide NGOs with a free, self-hosted cyber threat reporting platform that is easy to install and simple to use. It enables organisations to report cyber incidents and securely share information with other NGOs and law enforcement agencies.
 
 More Information on Project: https://underserved-project.eu/
 
