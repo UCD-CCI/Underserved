@@ -7,9 +7,96 @@ MISP-Forms is a service designed to provide users with a set of intuitive forms 
 These forms ensure that all relevant data is accurately captured and structured in a format that makes it actionable for law enforcement agencies, 
 national authorities, and organizations such as CSIRTs (Computer Security Incident Response Teams).  Below is a brief description of each form.
 
+### How to Submit a Cyber Threat Report
+
+1. Select the appropriate form based on the type of attack you are reporting (e.g. phishing, smishing, website defacement).  
+2. Choose your organisation from the dropdown menu.  
+3. Complete the form fields with as much detail as possible, including any relevant technical indicators.  
+4. Provide a full description of the incident in the designated text box, then click **Submit**.  
+
+Once submitted, your report will be sent to **MISP**, and a confirmation screen will appear with a link to the relevant section of the platform’s User Guide. This guide offers advice on how to recover from, or mitigate, the type of attack you reported.
+
 ---
 
+In addition to standard text-based forms, **MISP-Forms** supports alternative methods for reporting specific types of cyber incidents, including Phishing, Smishing (scam texts), and Quishing (scam QR codes).
 
+#### Phishing Email Reporting
+
+When reporting phishing emails, special care must be taken to avoid accidentally clicking on malicious links or opening dangerous attachments during the reporting process. To mitigate this risk, MISP-Forms allows users to safely upload the phishing email as a `.eml` file export. This approach preserves the full content and metadata of the email without requiring users to manually copy and paste potentially harmful information.
+
+#### Exporting an Email to `.eml`
+
+**Outlook (Desktop App)**  
+1. Open the email you want to export.  
+2. Click **File > Save As**.  
+3. In the "Save as type" dropdown, select **Outlook Message Format – Unicode**.  
+4. Change the file extension from `.msg` to `.eml` (if needed) before saving.  
+5. Save the file to your computer.  
+*Tip: If Outlook doesn't allow `.eml`, you can drag the email to your desktop—this often saves it in `.eml` format automatically.*
+
+**Outlook (Web)**  
+1. Open Outlook on the web and sign in.  
+2. Navigate to the email you want to save.  
+3. Right-click the email.  
+4. Select **Download** from the context menu.  
+5. Choose **Download as EML** to save the email.
+
+**Apple Mail (Mac)**  
+1. Open the email.  
+2. Go to **File > Save As**.  
+3. Select format: **Raw Message Source (.eml)**.  
+4. Save the file to your desired location.
+
+**Gmail**  
+1. Open the email.  
+2. Click the three-dot menu in the top-right corner of the email window.  
+3. Select **Download Message**.
+
+A text-based form is also available for reporting phishing incidents manually. This option is intended for users who prefer not to upload a .eml file and who are confident in their ability to safely extract and input the relevant information such as sender address, subject line, email body, and any suspicious links without interacting with potentially harmful content.
+
+---
+### Smishing (Scam Text Message)
+
+Similar to phishing, care must be taken when reporting smishing messages (scam texts). Copying and pasting website links directly from the message into a form poses a risk, as users may accidentally click the malicious link. 
+
+To mitigate this, **MISP-Forms** allows users to upload a screenshot of the message instead. The platform uses **OCR (Optical Character Recognition)** to automatically extract any URLs from the image. The extracted link can then be safely analysed using **Lookyloo**, one of the platform’s integrated analysis tools.
+
+#### Steps to Report a Smishing Incident
+
+1. Choose the **“Smishing”** form from the reporting menu.  
+2. Click **Browse** to upload a screenshot of the text message.  
+3. Click **Process Image**. You will be shown a preview of the screenshot and the extracted URL.  
+4. Verify that the extracted URL is correct. If necessary, make edits directly in the provided field.  
+5. Click **Analyse Website** to send the URL to Lookyloo for analysis.  
+6. Allow **30–60 seconds** for Lookyloo to process the site, depending on its size and complexity.  
+7. Once processing is complete, click **Actions** on the Lookyloo page.  
+8. Select **Prepare to Push to MISP**.  
+9. Click **Push to MISP** to submit the analysed data as a structured event.
+
+
+### Quishing (Scam QR Codes)
+
+**MISP-Forms** also supports the reporting of **quishing**—a form of phishing that uses scam QR codes to direct users to malicious websites. The reporting process is similar to that used for smishing. 
+
+By uploading an image of the QR code, the platform extracts the embedded URL and enables safe analysis using **Lookyloo**, reducing the risk of accidentally opening harmful links.
+
+#### Steps to Report a Quishing Incident
+
+1. Choose the **“Quishing”** form from the reporting menu.  
+2. Click **Browse** to upload an image of the QR code.  
+3. Click **Process Image**. You will be shown a preview of the screenshot and the extracted URL.  
+4. Verify that the extracted URL is correct. If necessary, make edits directly in the provided field.  
+5. Click **Analyse Website** to send the URL to Lookyloo for analysis.  
+6. Allow **30–60 seconds** for Lookyloo to process the site, depending on its size and complexity.  
+7. Once processing is complete, click **Actions** on the Lookyloo page.  
+8. Select **Prepare to Push to MISP**.  
+9. Click **Push to MISP** to submit the analysed data as a structured event.
+
+
+
+---
+
+### List of Forms
 
 ### Phishing
 
