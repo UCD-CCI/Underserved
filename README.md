@@ -79,6 +79,12 @@ sudo bash deploy.sh
 	- It is safe to bypass seurity warnings on browser.  This issue will be resolved when valid SSL certs are installed. 
 
 ---
+## Platform Hub
+<p align="center">
+<img src="underserved-mkdocs/docs/assets/platform.png" alt="UN Icon" width="80%" style="float: center; margin-left: 10px;"><br>
+</p>
+
+---
 
 ## Full Deployment Guide
 
