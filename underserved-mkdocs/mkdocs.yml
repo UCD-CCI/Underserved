@@ -45,13 +45,13 @@ nav:
         - MISP Threat Sharing: MISP.md
       - Reference:
         - Decider: Decider.md
-        - Cerebrate (Admin): cerebrate.md
+        - Cerebrate: cerebrate.md
       - Evidence Analysis:
         - LookyLoo: LookyLoo.md
         - Pandora: Pandora.md
       - Evidence Collection:
         - Typo-Squatting Finder: TypoSquat-Finder.md
-        - AIL(Admin): ail.md
+        - AIL: ail.md
   - Common Cyber Attacks:
       - Common Cyber Attack Types: common.md
       - Phishing: phishing.md

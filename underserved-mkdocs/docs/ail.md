@@ -11,11 +11,11 @@ Center Luxembourg (CIRCL).
 height="400" /><br>
 </div>
 
-# **Overview**
+## **Overview**
 
 The AIL Framework can ingest both structured and unstructured data for a range of sources, such as web crawling (including onion), discussion forums, chats, rss feeds, and  large data files.
 
-# **Feeders**
+## **Feeders**
 
 The collection of data from various sources can be a tedious task for
 analysts. AIL automates this process by providing a variety of feeders
@@ -41,7 +41,7 @@ More Feeders
 [here](https://github.com/orgs/ail-project/repositories?type=all)
 
 
-# **Trackers**
+## **Trackers**
 
 AIL processes the data streams provided by feeders, performing
 operations to analyse and extract relevant information. This is achieved
@@ -121,7 +121,7 @@ vulnerability (CVE-2024-21318).
 1. The condition states that either both $org_name and $username must
 appear together, or the $vulnerability must be found.
 
-# **Creating Trackers**
+## **Creating Trackers**
 
 AI can assist in crafting high-quality regular expressions (REGEX) and
 YARA rules, helping to identify patterns and indicators of compromise
@@ -136,14 +136,14 @@ testing your Trackers.
 
 
 
-# **Retro Hunt**
+## **Retro Hunt**
 
 AIL primarily performs real-time analysis of data streams; however, the
 Retro Hunt feature allows you use Trackers to search retrospectively
 through a data stream’s history. This can be useful for post-incident
 activities and investigations.
 
-# **Typo-Squatting**
+## **Typo-Squatting**
 
 AIL's Typo-Squatting feature takes a legitimate website address and uses
 fuzzing techniques to generate a list of potential typo-squatting
@@ -154,7 +154,7 @@ detect any occurrences of these generated addresses.
 
 
 
-# **Some Use Cases**
+## **Some Use Cases**
 ####  **Monitoring Pastebin and Other Paste Sites for Data Leaks**
     - AIL can automatically collect and analyse pastes from platforms like **Pastebin, CodePage, gist.github** and many other pastebin sites.
     - Create Trackers to Detect and Extracts credentials, API Keys and other leaked sensitive data from public facing pastes.
@@ -175,7 +175,7 @@ detect any occurrences of these generated addresses.
     - By leveraging this feature, security teams can analyse past records  for signs of compromise, track threat actor behavior over time, and  improve detection capabilities.
 
 
-# **MISP Integration**
+## **MISP Integration**
 
 AIL is integrated with **MISP (Malware Information Sharing
 Platform)** to **automatically send extracted IOCs** (e.g., domains,
@@ -190,7 +190,7 @@ height="300" /><br>(Export to MISP)
 </div>
 
 
-# **Training**
+## **Training**
 
 - [AIL
 Introduction](https://github.com/ail-project/ail-training/blob/master/1-ail-introduction/ail-training.pdf)
