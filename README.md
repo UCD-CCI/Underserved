@@ -81,7 +81,7 @@ sudo bash deploy.sh
 ---
 ## Platform Hub
 <p align="center">
-<img src="underserved-mkdocs/docs/assets/platform.png" alt="UN Icon" width="80%" style="float: center; margin-left: 10px;"><br>
+<img src="underserved-mkdocs/docs/assets/platform.png" alt="UN Icon" width="95%" style="float: center; margin-left: 10px;"><br>
 </p>
 
 ---
