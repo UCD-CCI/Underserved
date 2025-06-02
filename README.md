@@ -298,9 +298,36 @@ Choose option from menu.
 
 ---
 
-### ⚠️ Security Considerations
+
+## ⚠️ Security Considerations
 
 The UnderServed platform is designed for deployment within secure, access-controlled environments, such as internal networks or local area networks (LANs). It is not recommended to expose the platform directly to the public internet.
+
+---
+
+
+## Uninstalling Platform.
+
+Within the UnderServed directory, there is a script named destroy.sh. Running this script will uninstall the platform, removing all associated Docker resources and data.
+
+The script will delete all Docker
+	- Containers
+ 	- Images
+  	- Volumes
+   	- Networks
+    
+⚠️ All platform data will be deleted by this script.
+
+```bash
+
+sudo bash destory.sh
+```
+
+
+Once the script have completed you can manually delete the Underserved directory
+```bash
+sudo rm -rf Underserved
+```
 
 ---
 
@@ -322,6 +349,6 @@ This project was made possible thanks to the tools provided by the following org
 - [Decider by CISA](https://github.com/cisagov/decider)
 - [Keycloak](https://www.keycloak.org/)
 
-
+---
 
 
