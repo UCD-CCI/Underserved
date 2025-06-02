@@ -301,7 +301,7 @@ Choose option from menu.
 
 ## Security Considerations
 
-The UnderServed platform is designed for deployment within secure, access-controlled environments, such as internal networks or local area networks (LANs). It is not recommended to expose the platform directly to the public internet.
+⚠️ The UnderServed platform is designed for deployment within secure, access-controlled environments, such as internal networks or local area networks (LANs). It is not recommended to expose the platform directly to the public internet.
 
 ---
 
