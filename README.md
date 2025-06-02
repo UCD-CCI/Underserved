@@ -190,7 +190,7 @@ This may take approx. 25–35 minutes and runs unattended.
 
 ---
 
-## Installation Complete
+### Installation Complete
 
 When finished, you will be presented with the platform URL and login credentials. **Be sure to save this information.**
 
