@@ -6,7 +6,6 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' 
 
-# Function to display the menu
 display_menu() {
   echo -e "${BLUE}===============================================${NC}"
   echo " UnderServed Manager Utility"
@@ -16,33 +15,30 @@ display_menu() {
   echo "3. Reboot the server"
   echo "4. Get Platform Admin Username & Password"
   echo "5. Reset Portainer Password"
-  echo "6. Reset AIL-Framework Password" 
-  echo "7. Exit" 
+  echo "6. Reset AIL-Framework Password"
+  echo "7. View Platforms Logs"
+  echo "8. Exit"
   echo -e "${BLUE}===============================================${NC}"
   echo -n "Choose an option: "
 }
 
-# Function to restart all Docker containers
 restart_docker_containers() {
   echo "Restarting all Docker containers..."
   docker restart $(docker ps -a | cut -f1 -d" ")
   echo "All running containers have been restarted."
 }
 
-# Function to stop all Docker containers
 stop_docker_containers() {
   echo "Stopping all Docker containers..."
   docker stop $(docker ps -q)
   echo "All running containers have been stopped."
 }
 
-# Function to reboot the server
 reboot_server() {
   echo "Rebooting the server..."
   sudo reboot
 }
 
-# Get Platform Admin Username and Password
 get_admin_credentials(){
   FILE_TO_SEARCH="misp-docker/.env"
 
@@ -59,7 +55,7 @@ get_admin_credentials(){
 reset_portainer_password(){
   echo "Resetting Portainer Password..."
   cd portainer || { echo "Failed to change to 'portainer' directory. Exiting."; exit 1; }
-  
+
   docker stop portainer > /dev/null
   echo "Portainer Docker Manager Login"
   echo "Username: admin"
@@ -68,11 +64,32 @@ reset_portainer_password(){
 }
 
 reset_ail_password(){
- echo "Resetting AIL-Framework Password..."
- echo "Username: admin@admin.test"
- printf "Password: %s\n" "$(docker exec -it ail-framework bin/LAUNCH.sh -rp 2>&1 | grep password: | awk '{print $NF}')"
+  echo "Resetting AIL-Framework Password..."
+  echo "Username: admin@admin.test"
+  printf "Password: %s\n" "$(docker exec -it ail-framework bin/LAUNCH.sh -rp 2>&1 | grep password: | awk '{print $NF}')"
 }
 
+view_container_logs() {
+  local dirs=("nginx" "misp-docker" "misp-forms" "pandora" "lookyloo" "ail" "cerebrate" "ail-typo-website" "Back to Main Menu")
+  PS3=$'\nSelect a container to view logs (or choose Back to return): '
+
+  while true; do
+    select dir in "${dirs[@]}"; do
+      if [[ "$dir" == "Back to Main Menu" ]]; then
+        return
+      elif [[ -d "$dir" ]]; then
+        echo -e "\nShowing logs for $dir (Press Ctrl+C to return)..."
+        (
+          cd "$dir" || exit
+          docker compose logs -f
+        )
+        break
+      else
+        echo "Invalid selection. Please try again."
+      fi
+    done
+  done
+}
 
 # Main script logic
 while true; do
@@ -99,6 +116,9 @@ while true; do
       reset_ail_password
       ;;
     7)
+      view_container_logs
+      ;;
+    8)
       echo "Exiting..."
       break
       ;;
@@ -112,4 +132,3 @@ while true; do
   read -r
   clear
 done
-
