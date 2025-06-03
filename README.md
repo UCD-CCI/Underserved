@@ -290,7 +290,7 @@ Choose option from menu.
 4. Get Platform Admin Username & Password
 5. Reset Portainer Password
 6. Reset AIL-Framework Password
-7. View Platforms Logs
+7. View Platform Logs
 8. Exit
 ===============================================
 
