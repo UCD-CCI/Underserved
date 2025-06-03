@@ -325,7 +325,7 @@ sudo bash destory.sh
 ```
 
 
-Once the script have completed you can manually delete the Underserved directory
+Once the script has completed you can manually delete the Underserved directory
 ```bash
 sudo rm -rf Underserved
 ```
