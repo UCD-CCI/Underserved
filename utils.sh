@@ -16,7 +16,7 @@ display_menu() {
   echo "4. Get Platform Admin Username & Password"
   echo "5. Reset Portainer Password"
   echo "6. Reset AIL-Framework Password"
-  echo "7. View Platforms Logs"
+  echo "7. View Platform Logs"
   echo "8. Exit"
   echo -e "${BLUE}===============================================${NC}"
   echo -n "Choose an option: "
