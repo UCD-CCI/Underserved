@@ -24,7 +24,7 @@ display_menu() {
 
 restart_docker_containers() {
   echo "Restarting all Docker containers..."
-  docker restart $(docker ps -a | cut -f1 -d" ")
+  docker restart $(docker ps -aq)
   echo "All running containers have been restarted."
 }
 
